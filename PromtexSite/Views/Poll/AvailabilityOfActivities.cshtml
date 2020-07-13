@@ -1,0 +1,55 @@
+﻿@model Poll
+@{
+    ViewData["Title"] = "AvailabilityOfActivities";
+}
+
+<div class="container">
+    <h3>Наличие деятельности</h3>
+    <div class="form-group">
+        <form method="post" id="form">
+            <div class="idContainer">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" asp-for="AvailabilityOfActivities.ID" value="1" name="id" />
+                    <label class="form-check-label">
+                        Деятельность отсутствует полностью (нет движения денег, товаров и т.п.)
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" asp-for="AvailabilityOfActivities.ID" value="2" name="id" />
+                    <label class="form-check-label">
+                        Деятельность ведется
+                    </label>
+                </div>
+            </div>
+            <a class="btn btn-danger btn-lg m-2" asp-action="TaxSystem" asp-route-key="@ViewBag.Key">Назад</a>
+            <input type="submit" class="btn btn-danger btn-lg m-2" value="Далее" />
+        </form>
+    </div>
+</div>
+@section Scripts {
+    <script>
+        $("#form").validate({
+            rules: {
+                id: {
+                    required: true
+                }
+            },
+            messages:
+            {
+                id:
+                {
+                    required: "Выберите подходящий для Вас вариант<br/>"
+                }
+            },
+            errorPlacement: function (error, element) {
+                if (element.is(":radio")) {
+                    error.appendTo(element.parents('.idContainer'));
+                }
+                else { // This is the default behavior
+                    error.insertAfter(element);
+                }
+            }
+        });
+
+    </script>
+}

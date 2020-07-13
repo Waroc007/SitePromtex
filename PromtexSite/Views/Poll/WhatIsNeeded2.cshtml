@@ -1,0 +1,182 @@
+﻿@model Poll
+@{
+    ViewData["Title"] = "WhatIsNeeded2";
+}
+
+
+
+<div class="container">
+    <h3>Что требуется?</h3>
+    <div class="form-group">
+        <form method="post">
+            @if (Model.WhatIsNeeded2 != null && Model.WhatIsNeeded2.ContainsKey(1))
+            {
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="id1" value="1" checked>
+                    <label class="form-check-label">
+                        Складской учет товаров, материалов и т.п.
+                    </label>
+                </div>
+            }
+            else
+            {
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="id1" value="1">
+                    <label class="form-check-label">
+                        Складской учет товаров, материалов и т.п.
+                    </label>
+                </div>
+            }
+            @if (Model.WhatIsNeeded2 != null && Model.WhatIsNeeded2.ContainsKey(2))
+            {
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="id2" value="2" checked>
+                    <label class="form-check-label">
+                        Учет взаиморасчетов с контрагентами
+                    </label>
+                </div>
+            }
+            else
+            {
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="id2" value="2">
+                    <label class="form-check-label">
+                        Учет взаиморасчетов с контрагентами
+                    </label>
+                </div>
+            }
+            @if (Model.WhatIsNeeded2 != null && Model.WhatIsNeeded2.ContainsKey(3))
+            {
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="id3" value="3" checked>
+                    <label class="form-check-label">
+                        Расчет налогов по деятельности, составление и сдача отчетности
+                    </label>
+                </div>
+            }
+            else
+            {
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="id3" value="3">
+                    <label class="form-check-label">
+                        Расчет налогов по деятельности, составление и сдача отчетности
+                    </label>
+                </div>
+            }
+            @if (Model.WhatIsNeeded2 != null && Model.WhatIsNeeded2.ContainsKey(4))
+            {
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="id4" value="4" checked>
+                    <label class="form-check-label">
+                        Кадровый учет
+                    </label>
+                </div>
+            }
+            else
+            {
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="id4" value="4">
+                    <label class="form-check-label">
+                        Кадровый учет
+                    </label>
+                </div>
+            }
+            @if (Model.WhatIsNeeded2 != null && Model.WhatIsNeeded2.ContainsKey(5))
+            {
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="id5" value="5" checked>
+                    <label class="form-check-label">
+                        Расчет заработной платы
+                    </label>
+                </div>
+            }
+            else
+            {
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="id5" value="5">
+                    <label class="form-check-label">
+                        Расчет заработной платы
+                    </label>
+                </div>
+            }
+            @if (Model.WhatIsNeeded2 != null && Model.WhatIsNeeded2.ContainsKey(6))
+            {
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="id6" value="6" checked>
+                    <label class="form-check-label">
+                        Составление и сдача отчетности по налогам и сборам с заработной платы
+                    </label>
+                </div>
+            }
+            else
+            {
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="id6" value="6">
+                    <label class="form-check-label">
+                        Составление и сдача отчетности по налогам и сборам с заработной платы
+                    </label>
+                </div>
+            }
+            @if (Model.WhatIsNeeded2 != null && Model.WhatIsNeeded2.ContainsKey(7))
+            {
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="id7" value="7" checked>
+                    <label class="form-check-label">
+                        Консультации
+                    </label>
+                </div>
+            }
+            else
+            {
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="id7" value="7">
+                    <label class="form-check-label">
+                        Консультации
+                    </label>
+                </div>
+            }
+            @if (Model.WhatIsNeeded2 != null && Model.WhatIsNeeded2.ContainsKey(8))
+            {
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="id8" value="8" checked id="id8">
+                    <label class="form-check-label">
+                        Другое, указать что
+                    </label>
+                    <input type="text" name="text" id="text" value="@Model.WhatIsNeeded2[8]" class="form-control m-1" />
+                </div>
+            }
+            else
+            {
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="id8" value="8" id="id8">
+                    <label class="form-check-label">
+                        Другое, указать что
+                    </label>
+                    <input type="text" name="text" id="text" class="form-control m-1" disabled/>
+                </div>
+            }
+            @if (ViewBag.Error != null)
+            {
+                <p class="text-danger font-weight-bold">
+                    @ViewBag.Error
+                </p>
+            }
+            <a class="btn btn-danger btn-lg m-2" asp-action="Activities" asp-route-key="@ViewBag.Key">Назад</a>
+            <input type="submit" class="btn btn-danger btn-lg m-2" value="Далее" />
+        </form>
+
+    </div>
+</div>
+@section Scripts {
+    <script>
+        $('#id8').click(function () {
+            if ($('#id8').prop('checked')) {
+                $("#text").prop("disabled", false);
+            }
+            else {
+                $("#text").prop("disabled", true);
+            }
+        });
+
+    </script>
+}

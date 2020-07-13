@@ -1,0 +1,409 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+@media (min-height: 700px) {
+    .nav-menu {
+        padding-top:50px;
+    }
+}
+@media (max-height: 699px) {
+    .nav-menu {
+        padding-top: 10px;
+    }
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+    background-color: #ffde41;
+}
+
+.footer {
+    background-color: #ffde41;
+}
+
+
+#select-navigator {
+    border-color: red;
+    border: none;
+    outline: none;
+    background-color: #ffde41;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.row {
+    width: 100%;
+}
+
+footer.p {
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+}
+
+.navbar-nav {
+    margin-left: 10px;
+}
+
+.navbar-toggler {
+    margin-left: 20px;
+}
+
+.nav-item {
+    margin: 10px;
+}
+
+.dropdown-menu {
+    background-color: #ffde41;
+    border: none;
+}
+
+.dop_menu a:hover {
+    color: red;
+    background-color: white;
+}
+
+.dropdown-item:hover {
+    color: red;
+    background-color: #ffde41;
+}
+
+A:hover {
+    color: red;
+}
+
+.btn-group, .btn-group-vertical {
+    display: initial;
+}
+
+.click_to_show {
+    color: rgb(2, 106, 183);
+    cursor: pointer;
+}
+
+    .click_to_show.black {
+        color: red;
+    }
+
+    .click_to_show:hover {
+        color: red;
+        cursor: pointer;
+    }
+
+.hidden_content {
+    display: none;
+}
+
+.fr-how-work {
+    background: url(../img/backgrounds/fr-sprite.png) no-repeat top left;
+    background-position: -486px 0;
+    width: 918px;
+    height: 320px;
+}
+
+.how-works_bottom .lines {
+    position: absolute;
+    bottom: -43px;
+    left: 1%;
+    background: url(../img/backgrounds/fr-lines-x.png) repeat-x left top;
+    width: 98%;
+    height: 72px;
+    z-index: 2;
+}
+
+.how-works_top .girl .right .fr-line-left-right {
+    left: auto;
+    right: 109%;
+}
+
+.fr-line-left-right {
+    background: url(../img/backgrounds/fr-sprite.png) no-repeat top left;
+    background-position: -413px -151px;
+    width: 38px;
+    height: 9px;
+}
+
+.how-works_top .fr-girl-how-work {
+    position: relative;
+    right: -20px;
+    z-index: 1;
+}
+
+.how-works_top {
+    position: relative;
+    margin: -60px 0 -103px;
+    text-align: center;
+    z-index: 1;
+}
+
+.fr-girl-how-work {
+    background: url(../img/backgrounds/fr-sprite.png) no-repeat top left;
+    background-position: 0 -151px;
+    width: 273px;
+    height: 529px;
+}
+
+.fr-sprite {
+    display: inline-block;
+    /*background: url(../img/backgrounds/fr-sprite.png) no-repeat top left;*/
+}
+
+.how-works_bottom {
+    position: relative;
+    padding: 10px 10px 0;
+    background: rgb(255, 222, 65) url(../img/backgrounds/fr-yellow-light.png) center center;
+    text-align: center;
+    box-shadow: 0 30px 40px -20px rgba(0,0,0, .3);
+}
+
+@media (max-width: 992px) {
+    .fr-how-it-works_block {
+        display: none;
+    }
+
+    .check-list-block {
+        display: block;
+    }
+}
+
+@media (min-width: 993px) {
+    .check-list-block {
+        display: none;
+    }
+}
+
+.Home {
+    background: url(/img/backgrounds/free-month-bg.jpg) center top no-repeat;
+    min-height: 495px;
+    text-align: left;
+    min-height: 495px;
+    text-align: left;
+}
+
+.tariff {
+    position: relative;
+    background: rgb(243, 204, 21) url(../img/backgrounds/content-business-reg.jpg) no-repeat center top;
+    min-width: 0;
+    width: 100%;
+    min-height: 400px;
+}
+
+.tariff_wrap {
+    width: 51%;
+}
+
+@media (max-width: 960px) {
+    .menu_col2_max {
+        display: none;
+    }
+
+    .Home {
+        background: url(/img/backgrounds/cloud-bg.jpg) center top no-repeat;
+    }
+
+    .text_buh {
+        text-align: justify;
+    }
+
+    .dropdown-item {
+        white-space: normal
+    }
+
+    .tariff {
+        background: url(/img/backgrounds/cloud-bg.jpg) center top no-repeat;
+    }
+
+    .clouds {
+        display: block;
+    }
+
+    .tariff_wrap {
+        width: 100%;
+    }
+}
+
+@media (min-width: 961px) {
+    .menu_col2_min {
+        display: none;
+    }
+
+    .text_buh {
+        text-align: justify;
+        width: 45%
+    }
+}
+
+.btn-block {
+    height: 100%;
+    white-space: nowrap;
+}
+
+
+
+.flexslider .slides img {
+    width: 128px;
+    height: 128px;
+    display: initial;
+    border-radius: 60px;
+}
+
+.flex-prev {
+    float: left;
+}
+
+.flex-next {
+    float: right;
+}
+
+.partner-achive-list1 li {
+    list-style-type: none;
+}
+
+.partner-achive-list1 .medal-excellence_in_technology {
+    background-position: 1px -167px;
+}
+
+.reviews_row .lines {
+    position: relative;
+    bottom: -43px;
+    left: 1%;
+    background: url(../img/backgrounds/fr-lines-x.png) repeat-x left top;
+    transform: rotate(180deg);
+    width: 98%;
+    height: 72px;
+    z-index: 2;
+}
+
+.reviews_row {
+    box-shadow: 0 30px 40px -20px rgba(0,0,0, .3);
+}
+
+.how_match {
+    background-color: #ffde41;
+}
+
+.check-list li {
+    text-align: left;
+    list-style: none;
+    margin: 12px 0;
+    padding-left: 30px;
+    background: url(../img/check-icon_y.png) no-repeat 0 8px;
+}
+
+.fr-how-it-works_block {
+    margin-top: 60px;
+}
+
+.clouds {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: url(/img/backgrounds/bg-clouds-b-reg.png) no-repeat top center;
+    height: 101px;
+    width: 100%;
+}
+.faq_item {
+    padding: 25px 0;
+    border-bottom: 1px solid rgb(235, 235, 235);
+}
+
+.feedback-author_image img {
+    border-radius: 60px;
+    width: 60px;
+    height: auto;
+}
+.feedback_name {
+    font-weight: bold;
+    color: #000;
+}
+.hidden_content{
+    text-align:justify;
+}
+
+.partner-achive-list>tbody > tr > td> i {
+    display: block;
+    width: 75px;
+    height: 73px;
+    background-image: url(../img/medals-big.png?3);
+}
+.qcontent {
+    border-bottom: 1px solid rgb(235, 235, 235);
+}
+
+.some-form__line-required input[type="tel"],
+.some-form__line-required input[type="email"] {
+    border-color: #f45a57;
+}
+.some-form__hint {
+    z-index: -1;
+    opacity: 0;
+    top: 100%;
+    left: 0;
+    margin-top: -6px;
+    padding: 0 12px;
+    width: 100%;
+    background: #f45a57;
+    color: #fff;
+    font-size: 12px;
+    line-height: 1.333333;
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+.some-form__line-required .some-form__hint {
+    opacity: 1;
+    z-index: auto;
+}
+.btn-warning:hover {
+    color:red;
+}
+.show > .btn-warning.dropdown-toggle {
+    color: red;
+}
+.error {
+    color: red;
+}
+.pageNumbers {
+    font-size: 1.2rem;
+}
+.pageNumbers a {
+    color: black;
+}

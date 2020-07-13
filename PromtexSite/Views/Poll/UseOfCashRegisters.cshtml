@@ -1,0 +1,100 @@
+﻿@model Poll
+@{
+    ViewData["Title"] = "UseOfCashRegisters";
+}
+
+
+
+<div class="container">
+    <h3>Использование контрольно-кассовой техники?</h3>
+    <div class="form-group">
+        <form method="post" id="form">
+            <div class="idContainer">
+                <div class="form-check">
+                    <input class="form-check-input id1" type="radio" asp-for="UseOfCashRegisters.ID" name="id" value="1" />
+                    <label class="form-check-label">
+                        Не используется
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input id2" type="radio" asp-for="UseOfCashRegisters.ID" name="id" value="2" />
+                    <label class="form-check-label">
+                        Используется ежедневно, включая выходные дни
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input id3" type="radio" asp-for="UseOfCashRegisters.ID" name="id" value="3" />
+                    <label class="form-check-label">
+                        Используется только в рабочие дни
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input id4" type="radio" asp-for="UseOfCashRegisters.ID" name="id" value="4" />
+                    <label class="form-check-label">
+                        Используется время от времени, указать сколько в среднем дней в месяце
+                    </label>
+                    @if (ViewBag.Error != null)
+                    {
+                        <p class="text-danger font-weight-bold">
+                            @ViewBag.Error
+                        </p>
+                    }
+                    <input type="number" min="0" asp-for="UseOfCashRegisters.Text" name="text" class="form-control m-1" id="text" disabled />
+                </div>
+            </div>
+            @if (Model.Employees != null)
+            {
+                <a class="btn btn-danger btn-lg m-2" asp-action="Employees" asp-route-key="@ViewBag.Key">Назад</a>
+            }
+            else if (Model.WhatIsNeeded2 != null)
+            {
+                <a class="btn btn-danger btn-lg m-2" asp-action="WhatIsNeeded2" asp-route-key="@ViewBag.Key">Назад</a>
+            }
+            else if (Model.WhatIsNeeded3 != null)
+            {
+                <a class="btn btn-danger btn-lg m-2" asp-action="WhatIsNeeded3" asp-route-key="@ViewBag.Key">Назад</a>
+            }
+
+            <input type="submit" class="btn btn-danger btn-lg m-2" value="Далее" />
+        </form>
+
+    </div>
+</div>
+@section Scripts {
+    <script>
+        $("#form").validate({
+            rules: {
+                id: {
+                    required: true
+                }
+            },
+            messages:
+            {
+                id:
+                {
+                    required: "Выберите подходящий для Вас вариант<br/>"
+                }
+            },
+            errorPlacement: function (error, element) {
+                if (element.is(":radio")) {
+                    error.appendTo(element.parents('.idContainer'));
+                }
+                else { // This is the default behavior
+                    error.insertAfter(element);
+                }
+            }
+        });
+        if ($('.id4').prop('checked')) {
+            $("#text").prop("disabled", false);
+        }
+        $('.id1, .id2, .id3, .id4').click(function () {
+            if ($('.id4').prop('checked')) {
+                $("#text").prop("disabled", false);
+            }
+            else {
+                $("#text").prop("disabled", true);
+            }
+        });
+
+    </script>
+}

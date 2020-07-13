@@ -1,0 +1,36 @@
+﻿@model List<News>
+@{
+    ViewData["Title"] = "News";
+}
+
+<div class="m-2">
+    <a class="btn btn-info" href="/Administration/AddNews">Добавить новость</a>
+    <a class="btn btn-info float-right" href="/Administration/Index">Назад</a>
+</div>
+@if (Model.FirstOrDefault() != null)
+{
+    <div class="m-2">
+        <table class="table table-bordered table-hover" id="tblExport">
+            <thead>
+                <tr>
+                    <th>Название</th>
+                    <th>Текст</th>
+                    <th>Мин.Текст</th>
+                    <th>Дата</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var b in Model)
+                {
+                    <tr>
+                        <td><a asp-action="UpdateNews" asp-route-ID="@b.ID">@b.Name</a></td>
+                        <td>@b.Text</td>
+                        <td>@b.TextMin</td>
+                        <td>@b.Date</td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+    </div>
+}

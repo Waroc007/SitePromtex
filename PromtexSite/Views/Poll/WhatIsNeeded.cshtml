@@ -1,0 +1,92 @@
+﻿@model Poll
+@{
+    ViewData["Title"] = "WhatIsNeeded";
+}
+
+<div class="container">
+    <h3>Что требуется?</h3>
+    <div class="form-group">
+        <form method="post" id="form">
+            @if (Model.WhatIsNeeded != null && Model.WhatIsNeeded.ContainsKey(1))
+            {
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="id1" value="1" checked>
+                    <label class="form-check-label">
+                        Сдача «нулевой» отчетности
+                    </label>
+                </div>
+            }
+            else
+            {
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="id1" value="1">
+                    <label class="form-check-label">
+                        Сдача «нулевой» отчетности
+                    </label>
+                </div>
+            }
+            @if (Model.WhatIsNeeded != null && Model.WhatIsNeeded.ContainsKey(2))
+            {
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="id2" value="2" checked>
+                    <label class="form-check-label">
+                        Консультация
+                    </label>
+                </div>
+            }
+            else
+            {
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="id2" value="2">
+                    <label class="form-check-label">
+                        Консультация
+                    </label>
+                </div>
+            }
+            @if (Model.WhatIsNeeded != null && Model.WhatIsNeeded.ContainsKey(3))
+            {
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="id3" value="3" id="id3" checked>
+                    <label class="form-check-label">
+                        Другое, указать что
+                    </label>
+                    <input type="text" name="text" id="text" value="@Model.WhatIsNeeded[3]" class="form-control m-1" />
+                </div>
+
+            }
+            else
+            {
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="id3" id="id3" value="3">
+                    <label class="form-check-label">
+                        Другое, указать что
+                    </label>
+                    <input type="text" name="text" id="text" class="form-control m-1" disabled />
+                </div>
+            }
+            @if (ViewBag.Error != null)
+            {
+                <p class="text-danger font-weight-bold">
+                    @ViewBag.Error
+                </p>
+            }
+            <a class="btn btn-danger btn-lg m-2" asp-action="AvailabilityOfActivities" asp-route-key="@ViewBag.Key">Назад</a>
+            <input type="submit" class="btn btn-danger btn-lg m-2" value="Далее" />
+        </form>
+
+    </div>
+</div>
+@section Scripts {
+    <script>
+        
+        $('#id3').click(function () {
+            if ($('#id3').prop('checked')) {
+                $("#text").prop("disabled", false);
+            }
+            else {
+                $("#text").prop("disabled", true);
+            }
+        });
+
+    </script>
+}

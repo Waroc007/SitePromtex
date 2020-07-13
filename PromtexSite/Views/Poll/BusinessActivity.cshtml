@@ -1,0 +1,41 @@
+﻿@model Poll
+@{
+    ViewData["Title"] = "BusinessActivity";
+}
+
+
+
+<div class="container">
+    <h3>Активность бизнеса. Укажите количество первичной документации <span class="text-danger">в среднем</span> в месяц.</h3>
+    <div class="form-group">
+        <form method="post">
+            <div class="form-group">
+                <label>Товарная накладная на отгрузку покупателю</label>
+                <input class="form-control" asp-for="BusinessActivity[0].ID" min="0" type="number" name="num1" />
+            </div>
+            <div class="form-group">
+                <label>Акт приема-передачи работ/услуг заказчику</label>
+                <input class="form-control" asp-for="BusinessActivity[1].ID" min="0" type="number" name="num2" />
+            </div>
+            <div class="form-group">
+                <label>Отчет комиссионера/агента</label>
+                <input class="form-control" asp-for="BusinessActivity[2].ID" min="0" type="number" name="num3" />
+            </div>
+            <div class="form-group">
+                <label>Товарная накладная по поступлению от поставщика</label>
+                <input class="form-control" asp-for="BusinessActivity[3].ID" min="0" type="number" name="num4" />
+            </div>
+            <div class="form-group">
+                <label>Акт приема-передачи работ/услуг от поставщика</label>
+                <input class="form-control" asp-for="BusinessActivity[4].ID" min="0" type="number" name="num5" />
+            </div>
+            <div class="form-group">
+                <label>Кассовый + товарный чеки по покупкам за наличный расчет</label>
+                <input class="form-control" asp-for="BusinessActivity[5].ID" min="0" type="number" name="num6" />
+            </div>
+            <a class="btn btn-danger btn-lg m-2" asp-action="Software" asp-route-key="@ViewBag.Key">Назад</a>
+            <input type="submit" class="btn btn-danger btn-lg m-2" value="Далее" />
+        </form>
+        
+    </div>
+</div>

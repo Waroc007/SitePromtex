@@ -1,0 +1,44 @@
+﻿@model TablePrice
+@{
+    ViewData["Title"] = "UpdatePrice";
+}
+
+<h1>Обновление записи</h1>
+<div class="m-2">
+    <form method="post">
+        <div class="form-group">
+            <label asp-for="Name">Название</label>
+            <input type="text" asp-for="Name" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Unit">Ед. Измерения</label>
+            <input type="text" asp-for="Unit" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Price">Цена</label>
+            <input asp-for='Price' type="number" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Type">Тип</label>
+            <select asp-for="Type" class="form-control">
+                <option value="@TableType.RecordKeeping">Ведение учета</option>
+                <option value="@TableType.PersonnelAccounting">Кадровый учет</option>
+                <option value="@TableType.PayrollPreparation">Расчет заработной платы</option>
+                <option value="@TableType.ReportingAndSubmission">Составление и сдача отчетности</option>
+                <option value="@TableType.StorageServices">Услуги хранения</option>
+                <option value="@TableType.AccountingAdvice">Консультации по вопросам ведения бухгалтерского и налогового учета</option>
+                <option value="@TableType.SecretaryServices">Курьерская служба/услуги секретаря</option>
+                <option value="@TableType.LegalServices">Юридические услуги</option>
+                <option value="@TableType.ComprehensiveService">Тариф «Комплексный сервис»</option>
+            </select>
+        </div>
+        <input type="submit" class="btn-info btn" value="Добавить" />
+    </form>
+
+    <form method="post" asp-controller="Administration" asp-action="DeletePrice" asp-route-ID="@Model.ID">
+        <div class="form-group">
+            <input type="submit" class="btn btn-danger" value="Удалить" />
+        </div>
+    </form>
+</div>
+

@@ -1,0 +1,17 @@
+﻿@model Question
+@{
+    ViewData["Title"] = "AddQuestion";
+}
+
+<h1>Добавить вопрос</h1>
+<form method="post" class="m-2">
+    <div class="form-group">
+        <label asp-for="Name">Тема</label>
+        <input type="text" asp-for="Name" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Text">Текст</label>
+        <textarea asp-for="Text" class="form-control"></textarea>
+    </div>
+    <input type="submit" class="btn-info btn" value="Добавить" />
+</form>

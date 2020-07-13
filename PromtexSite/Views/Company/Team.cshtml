@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewData["Title"] = "Team";
+}
+<div class="container">
+    <h1>Команда</h1>
+    <div class="row">
+        <div class="col-12 col-lg-8" style="text-align:justify;">
+            <p>
+                Основа успеха любой компании, занимающейся аутсорсингом бухгалтерского учета, бухгалтерским обслуживанием и сопровождением, поддержкой и внедрением бухгалтерских программ являются люди, команда, ежедневно решающая сложнейшие задачи, которые ставят перед ними клиенты и конкурентная среда.
+            </p>
+            <p>
+                В наших рядах трудятся специалисты в области юриспруденции, продаж, бухгалтерского учета, расчета заработной платы, кадрового делопроизводства и администрирования, программисты, сервис инженеры и аналитики.
+            </p>
+            <p>
+                Квалификация наших сотрудников подтверждена соответствующими дипломами и сертификатами обязательными в рамках партнерства «1С:БухОбслуживание».
+            </p>
+            <p>
+                Мы заинтересованы в профессиональном развитии своих сотрудников. Внутри компании действует система оценки персонала, с помощью которой HR-отдел не только контролирует соответствие компетенции и навыков сотрудников установленным в «ПрофБО» требованиям, но и составляет для каждого специалиста индивидуальную программу обучения и развития. Внутренние и внешние семинары, методологические занятия, различные курсы, система наставничества обеспечивают постоянное повышение квалификации наших сотрудников.
+            </p>
+            <p>
+                Высокая компетентность – наше кредо. Мы не жалеем средств на обучение и поддержание профессионального тонуса. Поэтому бухгалтерское обслуживание и сопровождение в нашем исполнении будет «на уровне», обращайтесь к нам.
+            </p>
+        </div>
+        <div class="col">
+            <div class="products pl-1" id="products">
+                <div class="row">
+                    <div class="col p-0">
+                        <a href="~/img/We/we1.jpeg"><img src="~/img/We/we1.jpeg" alt="" style="transform: rotate(-12deg); min-width:60px; max-width:70%"></a>
+                        <a href="~/img/We/we2.jpeg"><img src="~/img/We/we2.jpeg" alt="" style="transform: rotate(-13deg); min-width:60px; max-width:70%"></a>
+                        <a href="~/img/We/we3.jpeg"><img src="~/img/We/we3.jpeg" alt="" style="transform: rotate(-13deg); min-width:60px; max-width:70%"></a>
+                        <a href="~/img/We/we4.jpeg"><img src="~/img/We/we4.jpeg" alt="" style="transform: rotate(-15deg); min-width:60px; max-width:70%"></a>
+                    </div>
+                    <div class="col p-0">
+                        <a href="~/img/We/we5.jpeg"><img src="~/img/We/we5.jpeg" alt="" style="transform: rotate(14deg); min-width:60px; max-width:70%"></a>
+                        <a href="~/img/We/we6.jpeg"><img src="~/img/We/we6.jpeg" alt="" style="transform: rotate(15deg); min-width:60px; max-width:70%"></a>
+                        <a href="~/img/We/we7.jpeg"><img src="~/img/We/we7.jpeg" alt="" style="transform: rotate(14deg); min-width:60px; max-width:70%"></a>
+                        <a href="~/img/We/we8.jpeg"><img src="~/img/We/we8.jpeg" alt="" style="transform: rotate(8deg); min-width:60px; max-width:70%"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+@section Scripts {
+    <script>
+        $('#products').magnificPopup({
+            delegate: 'a', // child items selector, by clicking on it popup will open
+            type: 'image',
+            gallery: {
+                enabled: true,
+                navigateByImgClick: true,
+                preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+            }
+        });
+    </script>
+}

@@ -1,0 +1,23 @@
+﻿@model Question
+@{
+    ViewData["Title"] = "UpdateQuestion";
+}
+<div class="m-2">
+    <h1>Обновить вопрос</h1>
+    <form method="post">
+        <div class="form-group">
+            <label asp-for="Name">Тема</label>
+            <input type="text" asp-for="Name" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Text">Текст</label>
+            <textarea asp-for="Text" class="form-control"></textarea>
+        </div>
+        <input type="submit" class="btn-info btn" value="Обновить" />
+    </form>
+    <form method="post" asp-controller="Administration" asp-action="DeleteQuestion" asp-route-ID="@Model.ID">
+        <div class="form-group">
+            <input type="submit" class="btn btn-danger" value="Удалить" />
+        </div>
+    </form>
+</div>

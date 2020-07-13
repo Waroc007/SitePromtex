@@ -1,0 +1,46 @@
+﻿@model Review
+@{
+    ViewData["Title"] = "Review";
+}
+
+<div class="container">
+    <h3>@Model.CompanyName</h3>
+    <div class="row">
+        <div class="col-12 col-lg-8">
+            <table>
+                <tr>
+                    <td><img src="@Model.PhotoFolder" width="100" height="100" style="border-radius: 60px;" /></td>
+                    <td>
+                        <p>
+                            @Model.Name<br />
+                            @Model.CompanyPosition<br />
+                        </p>
+                    </td>
+                </tr>
+            </table>
+            <div style="text-align:justify;">
+                @Html.Raw(Model.Text)
+            </div>
+        </div>
+        <div class="col">
+            <div class="products m-1" id="products" style="border: 1px solid rgb(250, 208, 72); width:300px;height:430px; text-align: center;">
+                <h3>Отзыв</h3>
+                <a href="@Model.ReviewFolder"><img src="@Model.ReviewFolder" width="250" style="cursor: pointer; border: 1px solid rgb(250, 208, 72); margin:5px;" /></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $('#products').magnificPopup({
+            delegate: 'a', // child items selector, by clicking on it popup will open
+            type: 'image',
+            gallery: {
+                enabled: true,
+                navigateByImgClick: true,
+                preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+            }
+        });
+    </script>
+}

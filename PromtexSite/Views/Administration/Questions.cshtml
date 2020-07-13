@@ -1,0 +1,32 @@
+﻿@model List<Question>
+@{
+    ViewData["Title"] = "Questions";
+}
+
+<div class="m-2">
+    <a class="btn btn-info" href="/Administration/AddQuestion">Добавить вопрос</a>
+    <a class="btn btn-info float-right" href="/Administration/Index">Назад</a>
+</div>
+@if (Model.FirstOrDefault() != null)
+{
+    <div class="m-2">
+        <table class="table table-bordered table-hover" id="tblExport">
+            <thead>
+                <tr>
+                    <th>Название</th>
+                    <th>Текст</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var b in Model)
+                {
+                    <tr>
+                        <td><a asp-action="UpdateQuestion" asp-route-ID="@b.ID">@b.Name</a></td>
+                        <td>@b.Text</td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+    </div>
+}

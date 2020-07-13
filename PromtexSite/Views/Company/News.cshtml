@@ -1,0 +1,75 @@
+﻿@model PageViewModel<News>
+@{
+    ViewData["Title"] = "News";
+}
+<div class="container">
+    <h1>Новости</h1>
+    <div class="row">
+        <div class="col-12 col-lg-8">
+            @if (Model.Items.FirstOrDefault() != null)
+            { 
+                <table>
+                    <tbody>
+                        @foreach (var r in Model.Items)
+                        {
+                            <tr style="border-bottom: 1px solid rgb(235, 235, 235);">
+                                <td class="feedback">
+                                    <span>@r.Date.ToShortDateString()</span><br />
+                                    <a asp-route-ID="@r.ID" asp-action="OneNews" class="feedback_name">@r.Name</a>
+                                    
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgb(235, 235, 235);">
+                                <td>
+                                    <div class="feedback_text">@r.TextMin  <a asp-route-ID="@r.ID" asp-action="OneNews">Читать далее</a> </div>
+                                </td>
+                            </tr>
+                                }
+                        </tbody>
+                </table>
+                <div class="pageNumbers">
+                    @if (Model.TotalPages > 1)
+                    {
+                        var pages = Model.PageViews();
+                        if (pages[0] != 1)
+                        {
+                            <span style="padding: 0 15px;">...</span>
+                        }
+                        for (var i = 0; i < pages.Count(); i++)
+                        {
+
+                            if (pages[i] == Model.PageNumber)
+                            {
+                                <span style="color:red;padding: 0 15px;">@pages[i]</span>
+                            }
+                            else
+                            {
+                                <a asp-route-page="@pages[i]" asp-action="News" style="padding: 0 15px;">@pages[i]</a>
+                            }
+                            if (i != (pages.Count() - 1))
+                            {
+                                if (pages[i] + 1 != pages[i + 1])
+                                {
+                                    <span style="padding: 0 15px;">...</span>
+                                }
+                            }
+                        }
+                        if (pages[pages.Count() - 1] != Model.TotalPages)
+                        {
+                            <span style="padding: 0 15px;">...</span>
+                        }
+
+                    }
+                </div>
+            }
+        </div>
+        <div class="col">
+            <div class="row" style="border: 1px solid rgb(250, 208, 72);background-image:url(/img/banner_buh1.png);background-repeat: no-repeat;background-position: right bottom; width:300px;height:430px; position: relative; left: 10px;">
+                <p style="margin:5px;">Хотите получить консультацию?<br /><strong>Оставьте заявку и мы вам перезвоним</strong></p>
+                <div class="d-block mx-auto" style="text-align:center;position: absolute;bottom: 10px;right: 10px;">
+                    <button class="btn btn-danger mb-1 btn-lg" data-toggle="modal" data-target="#Connect">Оставить заявку</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

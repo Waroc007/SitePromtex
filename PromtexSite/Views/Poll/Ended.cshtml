@@ -1,0 +1,36 @@
+﻿@model Poll
+@{
+    ViewData["Title"] = "Ended";
+}
+
+
+<div class="container">
+    <h3>Вы можете оставить свой номер телефона для уточнения дополнительных деталей  и\или комментарий, если хотите что-то добавить</h3>
+    <div class="form-group">
+        <form method="post">
+            <div class="form-group">
+                <label>Номер телефона</label>
+                <input class="form-control" min="0" type="text" name="tel" id="tel"/>
+            </div>
+            <div class="form-group">
+                <label>Комментарий</label>
+                <textarea class="form-control" name="com"></textarea>
+            </div>
+            @if (Model.Activities == null)
+            {
+                <a class="btn btn-danger btn-lg m-2" asp-action="WhatIsNeeded" asp-route-key="@ViewBag.Key">Назад</a>
+            }
+            else if (Model.Employees != null && Model.Software == null)
+            {
+                <a class="btn btn-danger btn-lg m-2" asp-action="Employees" asp-route-key="@ViewBag.Key">Назад</a>
+            }
+            else
+            {
+                <a class="btn btn-danger btn-lg m-2" asp-action="BusinessActivity" asp-route-key="@ViewBag.Key">Назад</a>
+            }
+
+            <input type="submit" class="btn btn-success btn-lg m-2" value="Закончить" />
+        </form>
+        
+    </div>
+</div>

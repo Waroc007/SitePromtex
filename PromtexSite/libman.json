@@ -1,0 +1,28 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "twitter-bootstrap@4.4.1",
+      "destination": "wwwroot/lib/twitter-bootstrap/"
+    },
+    {
+      "library": "flexslider@2.7.2",
+      "destination": "wwwroot/lib/flexslider"
+    },
+    {
+      "library": "magnific-popup.js@1.1.0",
+      "destination": "wwwroot/lib/magnific-popup"
+    },
+    {
+      "library": "font-awesome@5.12.1",
+      "destination": "wwwroot/lib/font-awesome"
+    },
+    {
+      "library": "jquery.maskedinput@1.4.1",
+      "destination": "wwwroot/lib/maskedinput"
+    }
+    
+
+  ]
+}

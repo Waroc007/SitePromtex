@@ -1,0 +1,49 @@
+﻿@model Review
+@{
+    ViewData["Title"] = "AddReview";
+}
+
+<h1>Добавить отзыв</h1>
+
+<form method="post" enctype="multipart/form-data" class="m-2">
+    <div class="form-group">
+        <label asp-for="Name">ФИО</label>
+        <input type="text" asp-for="Name" class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label asp-for="CompanyPosition">Должность</label>
+        <input type="text" asp-for="CompanyPosition" class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label asp-for="CompanyName">Название компании</label>
+        <input type="text" asp-for="CompanyName" class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label asp-for="TextMin">Мин. Текст</label>
+        <input type="text" asp-for="TextMin" class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label asp-for="Text">Текст</label>
+        <textarea asp-for="Text" class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+        <label asp-for="PhotoFolder">Фото</label>
+        <input asp-for="PhotoFolder" type="file" name="PhotoFolder" accept=".png, .jpg, .jpeg" class="form-control-file"/>
+    </div>
+    <div class="form-group">
+        <label  asp-for="ReviewFolder">Фото отзыва</label>
+        <input asp-for="ReviewFolder" type="file" name="ReviewFolder" accept=".png, .jpg, .jpeg" class="form-control-file" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Type">Тип</label>
+        <select asp-for="Type" class="form-control">
+            <option value="@TypeReview.ServicesSector">Сфера услуг</option>
+            <option value="@TypeReview.Wholesale">Оптовая торговля</option>
+            <option value="@TypeReview.Retail">Розничная торговля</option>
+            <option value="@TypeReview.Catering">Общественное питание</option>
+            <option value="@TypeReview.Production">Производство</option>
+            <option value="@TypeReview.Construction">Строительство</option>
+        </select>
+    </div>
+    <input type="submit" class="btn-info btn" value="Добавить" />
+</form>

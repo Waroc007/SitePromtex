@@ -1,0 +1,27 @@
+﻿@model Poll
+@{
+    ViewData["Title"] = "Email";
+}
+<div class="container">
+    <h3>Введите Ваш адрес электронной почты</h3>
+    <form method="post">
+        <div class="form-group">
+            <label asp-for="Email">Электронная почта</label>
+            <input type="email" asp-for="Email" class="form-control" />
+        </div>
+        @if (ViewBag.Error != null)
+        {
+            <p class="text-danger font-weight-bold">
+                @ViewBag.Error
+            </p>
+        }
+        <p>
+            <span class="text-danger">Нажимая кнопку «Далее» Вы автоматически соглашаетесь с обраткой персональных данных:</span></br>
+            <a href="/docs/pologenie.pdf">Положение о защите и порядке обработки персональных данных(pdf)</a></br>
+            <a href="/docs/soglasie.pdf">Согласие посетителя сайта на обработку персональных данных(pdf)</a></br>
+        </p>
+        <input type="submit" class="btn btn-danger btn-lg" value="Далее" />
+    </form>
+</div>
+
+

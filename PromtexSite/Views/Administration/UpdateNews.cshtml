@@ -1,0 +1,33 @@
+﻿@model News
+@{
+    ViewData["Title"] = "UpdateNews";
+}
+
+<h1>Обновление новости</h1>
+<div class="m-2">
+    <form method="post">
+        <div class="form-group">
+            <label asp-for="Name">Тема</label>
+            <input type="text" asp-for="Name" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="TextMin">Мин. Текст</label>
+            <input type="text" asp-for="TextMin" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Text">Текст</label>
+            <textarea asp-for="Text" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+            <label asp-for="Date">Текст</label>
+            <input asp-for="Date" type="date" class="form-control" />
+        </div>
+        <input type="submit" class="btn-info btn" value="Добавить" />
+    </form>
+
+    <form method="post" asp-controller="Administration" asp-action="DeleteNews" asp-route-ID="@Model.ID">
+        <div class="form-group">
+            <input type="submit" class="btn btn-danger" value="Удалить" />
+        </div>
+    </form>
+</div>

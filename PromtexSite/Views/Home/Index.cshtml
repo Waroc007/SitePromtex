@@ -1,0 +1,382 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="Home">
+    <div class="container">
+        <div class="main">
+            <div class="main_wrap">
+                <div style="" class="text_buh">
+                    <p class="m-0 mb-1 font-weight-bold text-center pt-1">Для организаций и индивидуальных предпринимателей</p>
+                    <h4 class="text-center">БУХГАЛТЕРСКИЕ УСЛУГИ</h4>
+                    <p>
+                        по ведению учета, сдаче отчетности, кадровому делопроизводству и расчету зарплаты в
+                        соответствии со стандартами прогрессивного аутсорсингового сервиса, созданного
+                        фирмой «1С».
+                    </p>
+                    <p>
+                        Мы можем заменить собой отдел бухгалтерии численностью до 5-ти
+                        человек.
+                    </p>
+                    <p>
+                        На Вас будут работать бухгалтеры, уровень знаний которых подтвержден сертификатом от
+                        фирмы «1С», получаемым по итогам квалификационного экзамена.
+                    </p>
+                    <p>
+                        Технология «1С:БухОбслуживания» отработана в федеральном масштабе. Доверяя
+                        ведение бухгалтерии партнеру обширной всероссийской сети, Вы минимизируете свои
+                        риски получить некачественный сервис.
+                    </p>
+                    <div class="d-block mx-auto" style="text-align: center;">
+                        <button class="btn btn-danger mb-1 btn-lg" data-toggle="modal" data-target="#Connect">Подключиться</button>
+                    </div>
+                </div>
+
+
+                <div class="row nav-menu">
+                    <div class="col col-sm-5 col-md-5 col-lg-5 col-xl mb-1" style="min-width:180px;">
+                        <a class="btn btn-warning btn-block" data-scroll href="#achievements">Квалификации</a>
+                    </div>
+                    <div class="col col-sm-5 col-md-5 col-lg-5 col-xl mb-1" style="min-width:180px;">
+                        <a class="btn btn-warning btn-block" data-scroll href="#howwork">Как это работает</a>
+                    </div>
+                    <div class="col col-sm-5 col-md-5 col-lg-5 col-xl mb-1" style="min-width:180px;">
+                        <a class="btn btn-warning btn-block" data-scroll href="#reviews">Отзывы клиентов</a>
+                    </div>
+                    <div class="col col-sm-5 col-md-5 col-lg-5 col-xl mb-1" style="min-width:180px;">
+                        <a class="btn btn-warning btn-block" data-scroll href="#howmatch">Сколько это стоит</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3 id="achievements" class="text-center p-2">Достижения и квалификация</h3>
+        <div class="row">
+            <div class="col-12 col-sm-7 col-md-8">
+                <table class="partner-achive-list">
+                    @if (@ViewBag.Medals[0]?.Visible)
+                    {
+                        <tr>
+                            <td style="width:75px;height:73px;"><i style="background-position: 1px -167px;"></i></td>
+                            <td>Отличник технологии</td>
+                        </tr>
+                    }
+
+                    @if (@ViewBag.Medals[1]?.Visible)
+                    {
+                        <tr>
+                            <td style="width:75px;height:73px;"><i style="background-position: 0 0;"></i></td>
+                            <td>Команда профессиональных бухгалтеров</td>
+                        </tr>
+                    }
+
+                    @if (@ViewBag.Medals[2]?.Visible)
+                    {
+                        <tr>
+                            <td style="width:75px;height:73px;"><i style="background-position: 0 -85px;"></i></td>
+                            <td>Регистрация бизнеса</td>
+                        </tr>
+                    }
+
+                    @if (@ViewBag.Medals[3]?.Visible)
+                    {
+                        <tr>
+                            <td style="width:75px;height:73px;"><i style=" background-position: -255px -85px;"></i></td>
+                            <td>Более 20 клиентов в сфере «Услуг»</td>
+                        </tr>
+                    }
+
+                    @if (@ViewBag.Medals[4]?.Visible)
+                    {
+                        <tr>
+                            <td style="width:75px;height:73px;"><i style="background-position: -84px -167px;"></i></td>
+                            <td>Отличник продаж</td>
+                        </tr>
+                    }
+
+                    @if (@ViewBag.Medals[5]?.Visible)
+                    {
+                        <tr>
+                            <td style="width:75px;height:73px;"><i style="background-position: -85px -85px;"></i></td>
+                            <td>Более 20 клиентов в сфере «Оптовая торговля»</td>
+                        </tr>
+                    }
+
+                    @if (@ViewBag.Medals[6]?.Visible)
+                    {
+                        <tr>
+                            <td style="width:75px;height:73px;"><i style="background-position: -85px 0;"></i></td>
+                            <td>Более 20 клиентов в сфере «Розничная торговля»</td>
+                        </tr>
+                    }
+
+                    @if (@ViewBag.Medals[7]?.Visible)
+                    {
+                        <tr>
+                            <td style="width:75px;height:73px;"><i style="background-position: -340px 0;"></i></td>
+                            <td>Лидер отзывов клиентов</td>
+                        </tr>
+                    }
+
+                    @if (@ViewBag.Medals[8]?.Visible)
+                    {
+                        <tr>
+                            <td style="width:75px;height:73px;"><i style="background-position: -255px 0;"></i></td>
+                            <td>Нам доверяют более 100 клиентов</td>
+                        </tr>
+                    }
+
+                    @if (@ViewBag.Medals[9]?.Visible)
+                    {
+                        <tr>
+                            <td style="width:75px;height:73px;"><i style="background-position: -170px 0;"></i></td>
+                            <td>Более 20 клиентов в сфере «Строительство»</td>
+                        </tr>
+                    }
+
+                    @if (@ViewBag.Medals[10]?.Visible)
+                    {
+                        <tr>
+                            <td style="width:75px;height:73px;"><i style="background-position: -170px -85px;"></i></td>
+                            <td>Страхование финансовой ответственности</td>
+                        </tr>
+                    }
+
+                    @if (@ViewBag.Medals[11]?.Visible)
+                    {
+                        <tr>
+                            <td style="width:75px;height:73px;"><i style="background-position: -340px -85px;"></i></td>
+                            <td>Более 20 клиентов в сфере «Производство»</td>
+                        </tr>
+                    }
+
+                </table>
+            </div>
+            <div class="col col-sm-5 col-md-4 text-center">
+                <div class="trening trening-photos" id="trening-photos">
+                    <div class="row">
+                        <div class="col p-0">
+                            <a href="/img/ratings/gramota.jpeg"><img src="/img/ratings/gramota.jpeg" alt="" style="transform: rotate(-12deg); min-width:60px; max-width:70%"></a>
+                            <a href="/img/ratings/blagod1.jpeg"><img src="/img/ratings/blagod1.jpeg" alt="" style="transform: rotate(-13deg); min-width:60px; max-width:70%"></a>
+                            <a href="/img/ratings/blagod2.jpeg"><img src="/img/ratings/blagod2.jpeg" alt="" style="transform: rotate(-13deg); min-width:60px; max-width:70%"></a>
+                            <a href="/img/ratings/sertif1.jpeg"><img src="/img/ratings/sertif1.jpeg" alt="" style="transform: rotate(-15deg); min-width:60px; max-width:70%"></a>
+                        </div>
+                        <div class="col p-0">
+                            <a href="/img/ratings/sertif2.jpeg"><img src="/img/ratings/sertif2.jpeg" alt="" style="transform: rotate(14deg); min-width:60px; max-width:70%"></a>
+                            <a href="/img/ratings/sertif3.jpeg"><img src="/img/ratings/sertif3.jpeg" alt="" style="transform: rotate(15deg); min-width:60px; max-width:70%"></a>
+                            <a href="/img/ratings/sertif4.jpeg"><img src="/img/ratings/sertif4.jpeg" alt="" style="transform: rotate(14deg); min-width:60px; max-width:70%"></a>
+                            <a href="/img/ratings/sertif5.jpeg"><img src="/img/ratings/sertif5.jpeg" alt="" style="transform: rotate(8deg); min-width:60px; max-width:70%"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3 id="howwork" class="text-center">Как это работает</h3>
+        <p style="text-align: justify;">
+            Основой наших регулярных услуг является предоставление клиенту с доступом через интернет (облачный сервис) учетного приложения 1С со встроенным функционалом по сдаче отчетности в электронном виде.
+        </p>
+        <p style="text-align: justify;">
+            В выделенной «облачной» учетной базе могут одновременно работать клиент и наши бухгалтеры организационно практически так же, как это происходит в локальной компьютерной сети отдельной компании с бухгалтерией в штате. А для обмена документами на бумажных носителях к клиенту направляется курьер.
+        </p>
+        <p style="text-align: justify;">
+            Обслуживание, включая расчет налогов, формирование и сдачу отчетности, осуществляется в соответствии с согласованным с клиентом графиком. Беспорядку не остается места.
+        </p>
+        <div class="check-list-block row">
+            <div class="col">
+                <ul class="check-list">
+                    <li>Бухучет ведут профессионалы</li>
+                    <li>Отчеты сдают вовремя</li>
+                    <li>По вопросам консультируют</li>
+                    <li>Отвечают за свои ошибки</li>
+                    <li>В доступе в рабочее время</li>
+                    <li>Нет больничных и отпусков</li>
+                    <li>Нет затрат на бухгалтера (рабочее место, налоги, обучение и т.п)</li>
+                </ul>
+            </div>
+            <div class="col">
+                Все под контролем:<br />
+                <ul class="check-list">
+                    <li>Продажи и закупки</li>
+                    <li>Деньги</li>
+                    <li>Сотрудники</li>
+                    <li>Клиенты</li>
+                    <li>Доходы и расходы</li>
+                    <li>В любой момент можно все посмотреть</li>
+                </ul>
+            </div>
+        </div>
+        <div class="fr-how-it-works_block">
+            <div class="how-works_top">
+                <div class="girl clearfix">
+                    <div class="row">
+                        <div class="left col-md-4 col-sm-6" style="align-self: center;">
+                            <ul class="check-list">
+                                <li>Бухучет ведут профессионалы</li>
+                                <li>Отчеты сдают вовремя</li>
+                                <li>По вопросам консультируют</li>
+                                <li>Отвечают за свои ошибки</li>
+                                <li>В доступе в рабочее время</li>
+                                <li>Нет больничных и отпусков</li>
+                                <li>Нет затрат на бухгалтера (рабочее место, налоги, обучение и т.п)</li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-4 hidden-sm hidden-xs">
+                            <i class="fr-sprite fr-girl-how-work"></i>
+                        </div>
+                        <div class="right col-md-4 col-sm-6" style="align-self: center; text-align:left;">
+                            Все под контролем:<br />
+                            <ul class="check-list">
+                                <li>Продажи и закупки</li>
+                                <li>Деньги</li>
+                                <li>Сотрудники</li>
+                                <li>Клиенты</li>
+                                <li>Доходы и расходы</li>
+                                <li>В любой момент можно все посмотреть</li>
+                            </ul>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="how-works_bottom">
+                <div class="how-works_bottom_wrap">
+                    <div class="pic pt-5">
+                        <i class="fr-sprite fr-how-work"></i>
+                    </div>
+                    <p style="color:rgb(215, 25, 33); padding-bottom: 50px;">* - предоставляется бесплатно, клиент оплачивает только бухгалтерскую работу.</p>
+                    <div class="lines"></div>
+                </div>
+            </div>
+        </div>
+        <div class="reviews_row text-center pt-4 mb-3" style="border: 1px solid rgb(229, 229, 229);">
+            <h3 id="reviews" class="text-center">Отзывы клиентов</h3>
+            <div class="flexslider">
+                <ul class="slides">
+                    @if (ViewBag.Reviews == null)
+                    {
+                        <li>
+                            <div>
+                                <img src="~/img/Review/alekseeva_small.jpg" width="100" height="100" />
+                                <p class="m-0">Алексеева Светлана Александровна</p>
+                                <p class="m-0">Генеральный директор</p>
+                                <p>ООО «Офис»</p>
+                                <p>
+                                    "Я, как будто у меня собственная бухгалтерия, в любой момент располагаю информацией для оперативного принятия управленческих решений."
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <img src="~/img/Review/yuisin_small.jpg" width="100" height="100" />
+                                <p class="m-0">Ван Хаоминь</p>
+                                <p class="m-0">Генеральный директор</p>
+                                <p>ООО "Юй Синь"</p>
+                                <p>
+                                    "Хочу выразить благодарность за качественно оказываемые услуги по ведению бухгалтерии."
+                                </p>
+                            </div>
+                        </li>
+                    }
+                    else
+                    {
+                        @foreach (var r in ViewBag.Reviews)
+                        {
+                            <li>
+                                <div>
+                                    <img src="@r.PhotoFolder" width="100" height="100" />
+                                    <p class="m-0">@r.Name</p>
+                                    <p class="m-0">@r.CompanyPosition</p>
+                                    <p>@r.CompanyName</p>
+                                    <p>
+                                        "@r.TextMin"
+                                    </p>
+                                </div>
+                            </li>
+                        }
+                    }
+                </ul>
+                <div class="custom-navigation">
+                    <a href="#" class="flex-prev"><img src="~/img/arr.png" width="60" height="60" style="transform: rotate(180deg)" /></a>
+                    <a href="#" class="flex-next"><img src="~/img/arr.png" width="60" height="60" /></a>
+                </div>
+
+            </div>
+            <div><a href="/Company/Reviews">Смотреть все отзывы</a></div>
+            <div class="lines"></div>
+        </div>
+        <div class="how_match pt-5" style="border: 1px solid rgb(229, 229, 229);">
+            <h3 id="howmatch" class="text-center">Сколько это стоит</h3>
+            <div style="text-align: justify; padding-left:5px; padding-right:5px; padding-bottom:5px;">
+                <p>Оплата зависит только от количества выполненной нашими бухгалтерами работы и складывается из тарифа, включающего в себя предопределенный набор бухгалтерских обязанностей, и стоимости заказанных клиентом дополнительных к тарифу услуг. </p>
+                <p>Вниманию клиентов предлагаются несколько тарифов, каждому из которых соответствует индивидуальный фиксированный перечень регулярных услуг. Клиент имеет возможность выбрать тариф, отвечающий его индивидуальным пожеланиям к стоимости в увязке с распределением функций и зон ответственности своей компании и внешней бухгалтерии.</p>
+                <p><a href="~/docs/Tariff.pdf" class="text-center d-block">Скачать файл «Сравнение тарифов»</a></p>
+                <p>Редко востребованные услуги или то, что большинство клиентов может и имеет желание выполнять самостоятельно (например, работа в «клиент-банке»), выносится за рамки тарифа и относится к дополнительным услугам, которые могут иметь регулярный или разовый характер и являются инструментом подстройки нашего сервиса под индивидуальные потребности каждого клиента.</p>
+                <div style="text-align:center">
+                    <p>В итоге – Вы получаете только то, что Вам нужно, и не переплачиваете за «воздух». </p>
+                    <p>
+                        Закажите расчет именно Вашей индивидуальной стоимости 1С:БухОбслуживания и
+                        получите коммерческое предложение (КП) на электронную почту, заполнив анкету.
+                    </p>
+                    <a class="btn btn-danger btn-lg text-white" asp-controller="Poll" asp-action="Email">Получить КП</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="UserOut" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Подождите, не уходите!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-justify">
+                <p>Вы можете получить коммерческое предложение на электронную почту, заполнив небольшую <a asp-controller="Poll" asp-action="Email">анкету</a>.</p>
+                <p>Также, посмотрите наши специальные предложения, которые принесут Вам реальную материальную выгоду:</p>
+                <ul class="check-list">
+                    <li><a href="/SpecialOffers/Taxation">Бесплатная консультация по оптимизации налогообложения</a></li>
+                    <li><a href="/SpecialOffers/Registration">Бесплатная подготовка документов для регистрации бизнеса</a></li>
+                    <li><a href="/SpecialOffers/Reestablish">Бесплатная консультация по перерегистрации бизнеса</a></li>
+                    <li><a href="/SpecialOffers/Audit">Бесплатный экспресс-аудит учета и отчетности</a></li>
+                    <li><a href="/SpecialOffers/Free">Бесплатный месяц бухгалтерского обслуживания</a></li>
+                </ul>
+                <a href="~/docs/Tariff.pdf">Скачать файл «Сравнение тарифов»</a>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script>
+        var scroll = new SmoothScroll('a[href*="#"]');
+
+        $('.flexslider').flexslider({
+            animation: "slide",
+            controlNav: false,
+            customDirectionNav: $(".custom-navigation a"),
+            itemWidth: 1000
+        });
+
+        $('#trening-photos').magnificPopup({
+            delegate: 'a', // child items selector, by clicking on it popup will open
+            type: 'image',
+            gallery: {
+                enabled: true,
+                navigateByImgClick: true,
+                preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+            }
+        });
+        const mouseTarget = document.getElementById('html');
+        var leaveEventCount = 0;
+        if (leaveEventCount == 0) {
+            mouseTarget.addEventListener('mouseleave', e => {
+                leaveEventCount++;
+                if (leaveEventCount == 1) {
+                    $('#UserOut').modal('show');
+                }
+            });
+        }
+    </script>
+}

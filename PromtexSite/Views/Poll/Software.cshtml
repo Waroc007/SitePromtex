@@ -1,0 +1,107 @@
+﻿@model Poll
+@{
+    ViewData["Title"] = "Software";
+}
+
+
+
+<div class="container">
+    <h3>Использование программ для ведения учета?</h3>
+    <div class="form-group">
+        <form method="post" id="form">
+            <div class="idContainer">
+                <div class="form-check">
+                    <input class="form-check-input id1" type="radio" asp-for="Software.ID" name="id" value="1" />
+                    <label class="form-check-label">
+                        Не используется ни одна
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input id2" type="radio" asp-for="Software.ID" name="id" value="2" />
+                    <label class="form-check-label">
+                        1С:Бухгалтерия
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input id3" type="radio" asp-for="Software.ID" name="id" value="3" />
+                    <label class="form-check-label">
+                        1С:Управление торговлей
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input id4" type="radio" asp-for="Software.ID" name="id" value="4" />
+                    <label class="form-check-label">
+                        1С:Управление нашей фирмой
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input id5" type="radio" asp-for="Software.ID" name="id" value="5" />
+                    <label class="form-check-label">
+                        1С:Розница
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input id6" type="radio" asp-for="Software.ID" name="id" value="6" />
+                    <label class="form-check-label">
+                        1С:Общепит
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input id7" type="radio" asp-for="Software.ID" name="id" value="7" />
+                    <label class="form-check-label">
+                        Другие или комбинация, указать что
+                    </label>
+                    @if (ViewBag.Error != null)
+                    {
+                        <p class="text-danger font-weight-bold">
+                            @ViewBag.Error
+                        </p>
+                    }
+                    <input type="text" asp-for="Software.Text" name="text" class="form-control m-1" id="text" disabled/>
+                </div>
+            </div>
+            <a class="btn btn-danger btn-lg m-2" asp-action="UseOfCashRegisters" asp-route-key="@ViewBag.Key">Назад</a>
+            <input type="submit" class="btn btn-danger btn-lg m-2" value="Далее" />
+        </form>
+
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $("#form").validate({
+            rules: {
+                id: {
+                    required: true
+                }
+            },
+            messages:
+            {
+                id:
+                {
+                    required: "Выберите подходящий для Вас вариант<br/>"
+                }
+            },
+            errorPlacement: function (error, element) {
+                if (element.is(":radio")) {
+                    error.appendTo(element.parents('.idContainer'));
+                }
+                else { // This is the default behavior
+                    error.insertAfter(element);
+                }
+            }
+        });
+        if ($('.id7').prop('checked')) {
+            $("#text").prop("disabled", false);
+        }
+        $('.id1, .id2, .id3, .id4, .id5, .id6, .id7').click(function () {
+            if ($('.id7').prop('checked')) {
+                $("#text").prop("disabled", false);
+            }
+            else {
+                $("#text").prop("disabled", true);
+            }
+        });
+
+    </script>
+}
